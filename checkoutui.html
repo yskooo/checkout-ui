@@ -90,6 +90,20 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="w-full bg-white rounded-lg border border-gray-200 px-4 py-6 mb-6">
+                            <h1 class="font-bold text-2xl mb-4">Order Overview</h1>
+
+                            <p  class="font-bold text-md mb-2">Order comment:</p>
+                            <textarea class="border border-gray-300 rounded-lg w-full p-2 mb-4" placeholder=""></textarea>
+            
+                            <input type="checkbox" id="terms-checkbox" class="mr-2">
+                            <label for="terms-checkbox">I have read the 
+                                <a href="" class="text-blue-500">General Terms and Conditions</a> for the online shop, the 
+                                <a href="" class="text-blue-500">Cancellation Policy</a>, and the 
+                                <a href="" class="text-blue-500">Data Protection Declaration</a> and expressly agree to them.
+                            </label>
+                        </div>
                         
                     </div>
 
@@ -129,23 +143,126 @@
                                     </div>
 
 
-                                    <div class="mb-3">
-                                        <label class="text-gray-600 font-semibold text-sm mb-1 ml-1">Country or region</label>
-                                        <select class="w-full px-3 py-2 border border-gray-200 rounded-t-lg focus:outline-none focus:border-indigo-500 transition-colors">
-                                            <option value="UK">Belgium</option>
-                                            <option value="CA">Canada</option>
-                                            <option value="CA">Germany</option>
-                                            <option value="US">United States</option>
-                                            <option value="UK">United Kingdom</option>
-                                        </select>
-                                        <input class="w-full px-3 py-2 border border-gray-200 rounded-b-lg focus:outline-none focus:border-indigo-500 transition-colors" placeholder="Zip Code" type="text"/>
-
-                                    </div>
+                                    <div class="bg-white p-6 rounded-lg shadow-md">
+                                        <h2 class="text-xl font-semibold mb-4">Billing Address</h2>
                                     
+                                        <div class="mb-3">
+                                            <label class="text-gray-600 font-semibold text-sm mb-1 ml-1">Salutation</label>
+                                            <select class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors">
+                                                <option value="Mr">Mr</option>
+                                                <option value="Mrs">Mrs</option>
+                                                <option value="Ms">Ms</option>
+                                                <option value="Dr">Dr</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="text-gray-600 font-semibold text-sm mb-1 ml-1">First Name</label>
+                                            <input class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors" placeholder="First Name" type="text"/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="text-gray-600 font-semibold text-sm mb-1 ml-1">Last Name</label>
+                                            <input class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors" placeholder="Last Name" type="text"/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="text-gray-600 font-semibold text-sm mb-1 ml-1">Address</label>
+                                            <input class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors" placeholder="Address" type="text"/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="text-gray-600 font-semibold text-sm mb-1 ml-1">Postcode</label>
+                                            <input class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors" placeholder="Postcode" type="text"/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="text-gray-600 font-semibold text-sm mb-1 ml-1">City</label>
+                                            <input class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors" placeholder="City" type="text"/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="text-gray-600 font-semibold text-sm mb-1 ml-1">Country</label>
+                                            <select class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors">
+                                                <option value="Belgium">Belgium</option>
+                                                <option value="Canada">Canada</option>
+                                                <option value="Germany">Germany</option>
+                                                <option value="United States">United States</option>
+                                                <option value="United Kingdom">United Kingdom</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="text-gray-600 font-semibold text-sm mb-1 ml-1">Phone</label>
+                                            <input class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors" placeholder="Phone" type="tel"/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="text-gray-600 font-semibold text-sm mb-1 ml-1">Company</label>
+                                            <input class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors" placeholder="Company" type="text"/>
+                                        </div>
+                                    </div>    
+
+                                    <!-- Shipping Method Card -->
+                                    <div class="mt-4 bg-white p-6 rounded-lg shadow-md">
+                                        <h2 class="text-xl font-semibold mb-4">Shipping Method</h2>
+                                        <!-- Shipping Method Content -->
+                                        <p class="font-bold">Your DHL package of choice delivered as requested.</p>
+                                        <p>With DHL Wunschpaket services, you decide when and where you receive your packages. Select your preferred delivery option:</p>
+                                        <div class="mb-3">
+                                            <label class="text-gray-600 font-semibold text-sm mb-1 ml-1">Desired location</label>
+                                            <input class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors" placeholder="Delivery to the desired storage location" type="text"/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="text-gray-600 font-semibold text-sm mb-1 ml-1">Desired neighbor</label>
+                                            <input class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors" placeholder="Delivery to the neighbor of your choice" type="text"/>
+                                        </div>
+                                    </div>
+
+                                    <!-- Payment Method Card -->
+                                    <div class="bg-white p-6 mt-4 rounded-lg shadow-md">
+                                        <h2 class="text-xl font-semibold mb-4">Payment Method</h2>
+                                        <div class="mb-3">
+                                            <label class="inline-flex items-center">
+                                                <input type="radio" class="form-radio h-5 w-5 text-indigo-500"
+                                                    name="paymentMethod" checked>
+                                                <span class="ml-2">On Bill</span>
+                                            </label>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="inline-flex items-center">
+                                                <input type="radio" class="form-radio h-5 w-5 text-indigo-500"
+                                                    name="paymentMethod">
+                                                <span class="ml-2">SEPA Direct Debit / Direct Debit</span>
+                                            </label>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="inline-flex items-center">
+                                                <input type="radio" class="form-radio h-5 w-5 text-indigo-500"
+                                                    name="paymentMethod">
+                                                <span class="ml-2">Instant Bank Transfer</span>
+                                            </label>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="inline-flex items-center">
+                                                <input type="radio" class="form-radio h-5 w-5 text-indigo-500"
+                                                    name="paymentMethod">
+                                                <span class="ml-2">Giropay</span>
+                                            </label>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="inline-flex items-center">
+                                                <input type="radio" class="form-radio h-5 w-5 text-indigo-500"
+                                                    name="paymentMethod">
+                                                <span class="ml-2">Credit Card</span>
+                                            </label>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="inline-flex items-center">
+                                                <input type="checkbox"
+                                                    class="form-checkbox h-5 w-5 text-indigo-500">
+                                                <span class="ml-4 text-sm">Please check if you want to redeem loyalty points
+                                                    or have discount coupon</span>
+                                            </label>
+                                        </div>
+                                    </div>   
                                 </div>
+                                
                             </div>
                         
-                            <div class="w-full p-3">
+                            <div class="w-full  p-3">
                                 <label for="type1" class="flex items-center cursor-pointer">
                                     <input type="radio" class="form-radio h-5 w-5 text-indigo-500" name="type" id="type1" checked>
                                     <img src="https://leadershipmemphis.org/wp-content/uploads/2020/08/780370.png" class="h-6 ml-3">
