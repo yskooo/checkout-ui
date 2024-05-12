@@ -28,14 +28,14 @@ function updateQuantity() {
     var quantitySpan = document.getElementById("quantity");
     quantitySpan.textContent = quantity;
 
-    var pricePerUnit = 29.90; // Assuming price is $29.90 per unit
+    var pricePerUnit = 29.90; // Assuming price is €29.90 per unit
     var subtotal = pricePerUnit * quantity;
-    var taxes = subtotal * 0.07; // Assuming 7% tax rate
+    var taxes = 23.81; // Fixed tax amount
     var total = subtotal + taxes;
 
-    document.getElementById("subtotal").textContent = "$" + subtotal.toFixed(2);
-    document.getElementById("taxes").textContent = "$" + taxes.toFixed(2);
-    document.getElementById("total").textContent = "$" + total.toFixed(2);
+    document.getElementById("subtotal").textContent = "€" + subtotal.toFixed(2);
+    document.getElementById("taxes").textContent = "€" + taxes.toFixed(2);
+    document.getElementById("total").textContent = "€" + total.toFixed(2);
 
     closeModal(); // Close the modal after updating quantity
 }

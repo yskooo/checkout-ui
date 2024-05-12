@@ -21,8 +21,10 @@
             </div>
         </div>
 
-        <div class="w-full bg-white border-1 rounded-lg border-gray-200 px-5 py-10 text-gray-800">
+        <div class="w-full bg-white border-1 rounded-lg border-gray-200 px-5  text-gray-800">
             <div class="w-full">
+                <h1 class="font-semibold text-2xl sm:text-4xl my-6 mx-4">Complete Order</h1>
+
                 <div class="-mx-3 md:flex items-start">
                     <div class="px-3 md:w-6/12 lg:pr-10">
 
@@ -36,7 +38,7 @@
                                         <button onclick="openModal()" class="text-gray-400 focus:outline-none">Quantity: <span id="quantity">1</span></button>
                                 </div>
                                 <div>
-                                    <span id="price" class="font-semibold text-gray-600 text-xl">29.90 $</span>
+                                    <span id="price" class="font-semibold text-gray-600 text-xl">€ 29.90</span>
                                 </div>
                             </div>
                         </div>
@@ -64,35 +66,46 @@
                         </div>
 
                         <div class="w-full bg-white rounded-lg border border-gray-200 px-4 py-6 mb-6">
-                            <div class="w-full flex mb-3 items-center">
-                                <div class="flex-grow">
-                                    <span class="text-gray-600">Subtotal</span>
+                            <h1 class="font-semibold text-2xl py-2">Order Overview</h1>
+
+                            <div class="ml-2">
+                                <div class="w-full flex mb-3 items-center ">
+                                    <div class="flex-grow">
+                                        <span class="text-gray-600">Subtotal</span>
+                                    </div>
+                                    <div class="pl-3">
+                                        <span id="subtotal" class="font-semibold">€ 29.90</span>
+                                    </div>
                                 </div>
-                                <div class="pl-3">
-                                    <span id="subtotal" class="font-semibold">29.90 $</span>
+                                <div class="w-full flex items-center mb-3">
+                                    <div class="flex-grow">
+                                        <span class="text-gray-600">Taxes (GST)</span>
+                                    </div>
+                                    <div class="pl-3">
+                                        <span id="taxes" class="font-semibold">€ 23.81</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="w-full flex items-center">
-                                <div class="flex-grow">
-                                    <span class="text-gray-600">Taxes (GST)</span>
+                                <div class="w-full flex items-center mb-3">
+                                    <div class="flex-grow">
+                                        <span class="text-gray-600">Shipping & Handling (DHL)</span>
+                                    </div>
+                                    <div class="pl-3">
+                                        <span id="shipping" class="font-semibold">€ 0.00</span>
+                                    </div>
                                 </div>
-                                <div class="pl-3">
-                                    <span id="taxes" class="font-semibold">10.0 $</span>
-                                </div>
-                            </div>
-                            <div class="w-full flex items-center">
-                                <div class="flex-grow">
-                                    <span class="text-gray-600">Total</span>
-                                </div>
-                                <div class="pl-3">
-                                    <span id="total" class="font-semibold">39.90 $</span>
+                                <div class="w-full flex items-center">
+                                    <div class="flex-grow">
+                                        <span class="text-gray-600">Total</span>
+                                    </div>
+                                    <div class="pl-3">
+                                        <span id="total" class="font-semibold">€ 53.71</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        
 
                         <div class="w-full bg-white rounded-lg border border-gray-200 px-4 py-6 mb-6">
-                            <h1 class="font-bold text-2xl mb-4">Order Overview</h1>
-
                             <p  class="font-bold text-md mb-2">Order comment:</p>
                             <textarea class="border border-gray-300 rounded-lg w-full p-2 mb-4" placeholder=""></textarea>
             
@@ -131,7 +144,6 @@
                                         </div>
                                     </div>
                                                             
-                                   <!-- This input field is for the cardholder's name -->
                                     <div class="mb-3">
                                         <label class="text-gray-600 font-semibold text-sm mb-2 ml-1">Cardholder Name</label>
                                         <div>
