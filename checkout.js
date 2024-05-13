@@ -39,3 +39,74 @@ function updateQuantity() {
 
     closeModal(); // Close the modal after updating quantity
 }
+
+// Function to validate the entire form
+function validateForm() {
+    const email = document.getElementById('email').value;
+    const cardNumber = document.getElementById('cardNumber').value;
+    const expiry = document.getElementById('expiry').value;
+    const cvc = document.getElementById('cvc').value;
+    const cardholderName = document.getElementById('cardholderName').value; // New line for cardholder name
+
+    let isValid = true;
+
+    // Validate email
+    if (!validateEmail(email)) {
+        alert('Please enter a valid email address.');
+        isValid = false;
+    }
+
+    // Validate credit card number
+    if (!validateCreditCard(cardNumber)) {
+        alert('Please enter a valid credit card number.');
+        isValid = false;
+    }
+
+    // Validate expiry
+    if (!validateExpiry(expiry)) {
+        alert('Please enter a valid expiry date in MM/YY format.');
+        isValid = false;
+    }
+
+    // Validate CVC
+    if (!validateCVC(cvc)) {
+        alert('Please enter a valid CVC.');
+        isValid = false;
+    }
+
+    // Validate cardholder name
+    if (cardholderName.trim() === '') {
+        alert('Please enter the cardholder name.');
+        isValid = false;
+    }
+
+    return isValid;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the pay button
+    const payButton = document.getElementById('payButton');
+
+    // Add event listener to the pay button
+    payButton.addEventListener('click', function(event) {
+        // Prevent the default button click behavior
+        event.preventDefault();
+
+        // Call the validateForm() function to validate the form
+        const isValid = validateForm();
+        
+        // Log the form validation result
+        console.log('Form is valid:', isValid);
+
+        // Check if the form is valid
+        if (isValid) {
+            // If the form is valid, you can proceed with payment or any other action
+            // For example: performPayment();
+            alert('Form is valid. Proceed with payment.');
+        } else {
+            // If the form is invalid, you can display an error message or take appropriate action
+            alert('Please fill in all required fields correctly.');
+            console.log('Form is not valid. Please correct the fields.');
+        }
+    });
+});
