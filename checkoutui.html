@@ -21,27 +21,40 @@
             </div>
         </div>
 
-        <div class="w-full bg-white border-1 rounded-lg border-gray-200 px-5  text-gray-800">
+        <div class="w-full bg-white px-5 text-gray-800">
             <div class="w-full">
                 <h1 class="font-semibold text-2xl sm:text-4xl my-6 mx-4">Complete Order</h1>
 
                 <div class="-mx-3 md:flex items-start">
                     <div class="px-3 md:w-6/12 lg:pr-10">
 
-                        <div class="w-full mx-auto text-gray-800 font-light mb-6 pb-6">
-                            <div class="w-full flex items-center">
-                                <div class="overflow-hidden rounded-lg w-28 h-28 bg-gray-50 border border-gray-200">
-                                    <img src="https://cdn.allsani.com/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/p/u/pulverdose_kunststoff_mittel_allsani_filatin_v02.png" alt="product">
+                        <div class="container mx-auto text-gray-800 font-light mb-6">
+                            <div class="flex flex-col lg:flex-row items-center p-6 border rounded-lg border-gray-200">
+                                <div class=" rounded-lg w-40 h-40 bg-gray-100 p-4">
+                                    <img src="https://cdn.allsani.com/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/p/u/pulverdose_kunststoff_mittel_allsani_filatin_v02.png" alt="product" class="object-contain w-full h-full">
                                 </div>
-                                <div class="flex-grow pl-3">
-                                    <h6 class="font-semibold uppercase text-gray-600">Filatin</h6>
-                                        <button onclick="openModal()" class="text-gray-400 focus:outline-none">Quantity: <span id="quantity">1</span></button>
-                                </div>
-                                <div>
-                                    <span id="price" class="font-semibold text-gray-600 text-xl">€ 29.90</span>
+
+                                <div class="flex flex-col md:flex-row items-center justify-between flex-grow md:pr-3 mt-4 md:mt-0">
+                                    <div class="flex flex-col px-4 items-center">
+                                        <h6 class="font-semibold uppercase text-lg sm:text-2xl text-gray-600">Filatin</h6>
+                                        <div class="relative">
+                                            <button onclick="openModal()" class="text-gray-400 focus:outline-none bg-white border border-gray-300 px-2 py-0.8 rounded inline-flex items-center">
+                                                <span class="mr-1">Qty: </span><span id="quantity">1</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                                </svg>                                          
+                                            </button>
+                                            <div class="absolute right-0 mt-2 w-40 bg-white border border-gray-300 rounded-md shadow-lg z-10 hidden"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-4">
+                                        <span id="price" class="font-semibold text-gray-600 text-xl">€ 29.90</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        
                         
                         <!-- Modal -->
                         <div id="myModal" class="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75">
@@ -125,21 +138,21 @@
                                     <div class="mb-3">
                                         <label class="text-gray-600 font-semibold text-sm mb-2 ml-1">Email</label>
                                         <div>
-                                            <input class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="" type="text"/>
+                                            <input id="email" class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="" type="text"/>
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <label class="text-gray-600 font-semibold text-sm mb-1 ml-1">Card information</label>
                                         <div class="relative">
-                                            <input class="w-full px-3 py-2 border border-gray-200 rounded-t-lg focus:outline-none focus:border-indigo-500 transition-colors pr-10" placeholder="0000 0000 0000 0000" type="text"/>
+                                            <input id="cardNumber" class="w-full px-3 py-2 border border-gray-200 rounded-t-lg focus:outline-none focus:border-indigo-500 transition-colors pr-10" placeholder="0000 0000 0000 0000" type="text"/>
                                             <img src="https://leadershipmemphis.org/wp-content/uploads/2020/08/780370.png" class="h-3 sm:h-4 absolute top-1/2 transform -translate-y-1/2 right-3"/>
                                         </div>
                                         <div class="grid grid-cols-2 gap-0">
                                             <div>
-                                                <input class="w-full px-3 py-2 border border-gray-200 rounded-bl-lg focus:outline-none focus:border-indigo-500 transition-colors" placeholder="MM/YY" type="text"/>
+                                                <input id="expiry" class="w-full px-3 py-2 border border-gray-200 rounded-bl-lg focus:outline-none focus:border-indigo-500 transition-colors" placeholder="MM/YY" type="text"/>
                                             </div>
                                             <div>
-                                                <input class="w-full px-3 py-2 border border-gray-200 rounded-br-lg focus:outline-none focus:border-indigo-500 transition-colors" placeholder="CVC" type="text"/>
+                                                <input id="cvc" class="w-full px-3 py-2 border border-gray-200 rounded-br-lg focus:outline-none focus:border-indigo-500 transition-colors" placeholder="CVC" type="text"/>
                                             </div>
                                         </div>
                                     </div>
@@ -147,7 +160,7 @@
                                     <div class="mb-3">
                                         <label class="text-gray-600 font-semibold text-sm mb-2 ml-1">Cardholder Name</label>
                                         <div>
-                                            <input class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="Full name on card" type="text"/>
+                                            <input id="cardholderName" class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="Full name on card" type="text"/>
                                         </div>
                                     </div>
 
@@ -284,7 +297,7 @@
                                     </div>
                                 </div>
                             <div>
-                            <button class="block w-full mx-auto bg-[#32cd32] hover:bg-[#FFA500] focus:bg-[#FFA500] text-white rounded-sm px-6 py-4 font-semibold">
+                            <button id="payButton" class="block w-full mx-auto bg-[#32cd32] hover:bg-[#FFA500] focus:bg-[#FFA500] text-white rounded-sm px-6 py-4 font-semibold">
                                 Pay
                             </button>
                         </div>
