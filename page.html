@@ -7519,19 +7519,39 @@
                                   >
                                 </div>
                               </div>
-                              <div class="w-full flex items-center mb-3">
+                              <div class="w-full flex items-center mb-3" id="vat-breakdown" style="display: none;">
                                 <div class="flex-grow">
-                                  <span class="text-gray-600 mr-2">Taxes </span>
-                                  <span class="text-gray-400 text-xs"
-                                    >VAT(19%)</span
-                                  >
+                                  <span class="text-gray-400 text-xs">reduced VAT 19% (19%)</span>
                                 </div>
                                 <div class="pl-3">
-                                  <span id="taxes" class="font-semibold"
-                                    >€ 4.61</span
-                                  >
+                                  <span class="text-gray-400 text-xs">€ 4.61</span>
                                 </div>
                               </div>
+                              <div class="w-full flex items-center mb-3 cursor-pointer" id="total-taxes">
+                                <div class="flex-grow">
+                                  <span class="font-semibold" id="toggle-text"><span class="toggle-sign">+</span> Taxes</span>
+                                </div>
+                                <div class="pl-3">
+                                  <span class="font-semibold">€ 4.61</span>
+                                </div>
+                              </div>
+                             
+                              <script>
+                                var taxes = document.getElementById('total-taxes');
+                                var vatBreakdown = document.getElementById('vat-breakdown');
+                                var toggleText = document.getElementById('toggle-text');
+
+                                taxes.addEventListener('click', function() {
+                                  if (vatBreakdown.style.display === 'none') {
+                                    vatBreakdown.style.display = 'flex'; // Change display to flex to show in row
+                                    toggleText.innerHTML = '<span class="toggle-sign">-</span> Taxes'; // Change text to "-" when shown
+                                  } else {
+                                    vatBreakdown.style.display = 'none';
+                                    toggleText.innerHTML = '<span class="toggle-sign">+</span> Taxes'; // Change text to "+" when hidden
+                                  }
+                                });
+                              </script>
+
                               <div class="w-full flex items-center mb-3">
                                 <div class="flex-grow">
                                   <span class="text-gray-600"
