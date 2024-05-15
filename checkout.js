@@ -1,3 +1,14 @@
+function closeModal(event) {
+    var modal = document.getElementById("myModal");
+    if (!event || event.target.id === 'myModal') {
+        modal.style.display = "none";
+    }
+}
+
+function stopPropagation(event) {
+    event.stopPropagation(); // Prevents the click event from bubbling up to the parent div
+}
+
 function openModal() {
     var modal = document.getElementById("myModal");
     modal.style.display = "flex";
@@ -40,43 +51,38 @@ function updateQuantity() {
     document.getElementById("subtotal").textContent = "€" + subtotal.toFixed(2);
     document.getElementById("taxes").textContent = "€" + taxes.toFixed(2);
     document.getElementById("total").textContent = "€" + total.toFixed(2);
-
-    closeModal(); // Close the modal after updating quantity
 }
 
+function updateAndCloseModal(event) {
+    updateQuantity(); // Call the updateQuantity function
+    closeModal();    // Call the closeModal function to close the modal
+}
+
+
 document.addEventListener("DOMContentLoaded", function() {
+    // Get elements related to delivery address
     const sendToThisAddressRadio = document.getElementById("send-to-this-address");
     const sendToOtherAddressRadio = document.getElementById("send-to-other-address");
     const otherAddressContainer = document.getElementById("other-address-container");
 
-    // Add event listener to both radio buttons
+    // Add event listener to handle changes in delivery address radio buttons
     sendToThisAddressRadio.addEventListener("change", function() {
-        if (sendToThisAddressRadio.checked) {
-            otherAddressContainer.style.display = "none"; // Hide the new form inputs
-        }
+        otherAddressContainer.style.display = sendToThisAddressRadio.checked ? "none" : "block";
     });
 
     sendToOtherAddressRadio.addEventListener("change", function() {
-        if (sendToOtherAddressRadio.checked) {
-            otherAddressContainer.style.display = "block"; // Show the new form inputs
-        }
+        otherAddressContainer.style.display = sendToOtherAddressRadio.checked ? "block" : "none";
     });
-});
 
-document.addEventListener("DOMContentLoaded", function() {
+    // Get elements related to delivery options
     const deliveryToPackingCheckbox = document.getElementById("delivery-to-packing");
     const dhlPostalForm = document.getElementById("dhl-postal-form");
     const dhlPickupForm = document.getElementById("dhl-pickup-form");
 
-    // Add event listener to the checkbox
+    // Add event listener to handle changes in delivery options checkbox
     deliveryToPackingCheckbox.addEventListener("change", function() {
-        if (deliveryToPackingCheckbox.checked) {
-            dhlPostalForm.style.display = "block"; // Show DHL postal form
-            dhlPickupForm.style.display = "block"; // Show DHL pickup form
-        } else {
-            dhlPostalForm.style.display = "none"; // Hide DHL postal form
-            dhlPickupForm.style.display = "none"; // Hide DHL pickup form
-        }
+        const isChecked = deliveryToPackingCheckbox.checked;
+        dhlPostalForm.style.display = isChecked ? "block" : "none";
+        dhlPickupForm.style.display = isChecked ? "block" : "none";
     });
 });
-

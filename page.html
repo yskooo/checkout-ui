@@ -7374,7 +7374,7 @@
                       </div>
 
                       <div class="-mx-3 md:flex items-start">
-                        <div class="px-3 md:w-6/12 lg:pr-10">
+                        <div class="px-3 md:w-6/12 lg:pr-10 sticky">
                           <div
                             class="container mx-auto text-gray-800 font-light mb-6"
                           >
@@ -7440,10 +7440,10 @@
                           <!-- Modal -->
                           <div
                             id="myModal"
-                            class="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75"
-                          >
-                            <div
-                              class="bg-white rounded-lg overflow-hidden max-w-md w-full"
+                          > 
+                          <div class="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75" onclick="closeModal(event)">
+                            <div class="bg-white rounded-lg overflow-hidden max-w-md w-full"
+                                 onclick="stopPropagation(event)"
                             >
                               <div class="flex justify-end p-4">
                                 <button
@@ -7472,7 +7472,7 @@
                                   class="flex items-center justify-between mb-4"
                                 >
                                   <button
-                                    class="text-2xl font-bold"
+                                    class="text-2xl"
                                     onclick="decrementQuantity()"
                                   >
                                     -
@@ -7485,8 +7485,8 @@
                                     value="1"
                                   />
                                   <button
-                                    class="text-2xl font-bold"
-                                    onclick="incrementQuantity()"
+                                  class="text-2xl bg-red rounded-full hover:bg-red-dark transition-all duration-300"
+                                  onclick="incrementQuantity()"
                                   >
                                     +
                                   </button>
@@ -7500,6 +7500,7 @@
                               </div>
                             </div>
                           </div>
+                        </div>
 
                           <div
                             class="w-full bg-white rounded-lg border border-gray-200 px-4 py-6 mb-6"
@@ -7616,13 +7617,13 @@
                               <div>
                                 <div class="mb-3">
                                   <label
-                                    class="text-gray-600 font-semibold text-sm mb-2 ml-1"
+                                    class="text-gray-600 font-semibold text-sm mb-2 ml-1 validate-email required-entry"
                                     >Email</label
                                   >
                                   <div>
                                     <input
                                       id="email"
-                                      class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors"
+                                      class="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                       placeholder=""
                                       type="text"
                                     />
@@ -7636,7 +7637,7 @@
                                   <div class="relative">
                                     <input
                                       id="cardNumber"
-                                      class="w-full px-3 py-2 border border-gray-200 rounded-t-lg focus:outline-none focus:border-indigo-500 transition-colors pr-10"
+                                      class="w-full px-3 py-2 border border-gray-200 rounded-t-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors pr-10"
                                       placeholder="0000 0000 0000 0000"
                                       type="text"
                                     />
@@ -7649,19 +7650,22 @@
                                     <div>
                                       <input
                                         id="expiry"
-                                        class="w-full px-3 py-2 border border-gray-200 rounded-bl-lg focus:outline-none focus:border-indigo-500 transition-colors"
+                                        class="w-full px-3 py-2 border border-gray-200 rounded-bl-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                         placeholder="MM/YY"
                                         type="text"
                                       />
                                     </div>
-                                    <div>
+                                    <div class="relative z-10">
                                       <input
                                         id="cvc"
-                                        class="w-full px-3 py-2 border border-gray-200 rounded-br-lg focus:outline-none focus:border-indigo-500 transition-colors"
+                                        class="w-full px-3 py-2 border border-gray-200 rounded-br-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                         placeholder="CVC"
                                         type="text"
                                       />
+                                      <!-- Display image as img tag -->
+                                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT01MKeEGrybKJph6F3c7iX7Cb33KcgLOhwBg&usqp=CAU" alt="Image" class="h-4 sm:h-6 absolute top-1/2 transform -translate-y-1/2 right-3">
                                     </div>
+                                    
                                   </div>
                                 </div>
 
@@ -7673,7 +7677,7 @@
                                   <div>
                                     <input
                                       id="cardholderName"
-                                      class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors"
+                                      class="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                       placeholder="Full name on card"
                                       type="text"
                                     />
@@ -7689,7 +7693,7 @@
                                     <label class="inline-flex items-center">
                                       <input
                                         type="radio"
-                                        class="form-radio h-5 w-5 text-indigo-500"
+                                        class="form-radio h-5 w-5 text-sky-200"
                                         name="paymentMethod"
                                         checked
                                       />
@@ -7700,7 +7704,7 @@
                                     <label class="inline-flex items-center">
                                       <input
                                         type="radio"
-                                        class="form-radio h-5 w-5 text-indigo-500"
+                                        class="form-radio h-5 w-5 text-sky-200"
                                         name="paymentMethod"
                                       />
                                       <!-- <span class="ml-2">SEPA Direct Debit / Direct Debit</span> -->
@@ -7714,7 +7718,7 @@
                                     <label class="inline-flex items-center">
                                       <input
                                         type="radio"
-                                        class="form-radio h-5 w-5 text-indigo-500"
+                                        class="form-radio h-5 w-5 text-sky-200"
                                         name="paymentMethod"
                                       />
                                       <!-- <span class="ml-2">Instant Bank Transfer</span> -->
@@ -7728,7 +7732,7 @@
                                     <label class="inline-flex items-center">
                                       <input
                                         type="radio"
-                                        class="form-radio h-5 w-5 text-indigo-500"
+                                        class="form-radio h-5 w-5 text-sky-200"
                                         name="paymentMethod"
                                       />
                                       <!-- <span class="ml-2">Giropay</span> -->
@@ -7744,7 +7748,7 @@
                                     >
                                       <input
                                         type="radio"
-                                        class="form-radio h-5 w-5 text-indigo-500"
+                                        class="form-radio h-5 w-5 text-sky-200"
                                         name="paymentMethod"
                                         checked
                                       />
@@ -7760,7 +7764,7 @@
                                     >
                                       <input
                                         type="radio"
-                                        class="form-radio h-5 w-5 text-indigo-500"
+                                        class="form-radio h-5 w-5 text-sky-200"
                                         name="paymentMethod"
                                       />
                                       <!-- <span class="ml-2">Paypal</span> -->
@@ -7775,7 +7779,7 @@
                                     <label class="inline-flex items-center">
                                         <input
                                             type="checkbox"
-                                            class="form-checkbox h-5 w-5 text-indigo-500"
+                                            class="form-checkbox h-5 w-5 text-sky-200"
                                             id="redeemCheckbox"
                                         />
                                         <span class="ml-4 text-sm">
@@ -7838,7 +7842,7 @@
                                   >Salutation</label
                                 >
                                 <select
-                                  class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors"
+                                  class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                 >
                                   <option value="Mr">Mr</option>
                                   <option value="Mrs">Mrs</option>
@@ -7852,7 +7856,7 @@
                                   >First Name</label
                                 >
                                 <input
-                                  class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors"
+                                  class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                   placeholder="First Name"
                                   type="text"
                                 />
@@ -7863,7 +7867,7 @@
                                   >Last Name</label
                                 >
                                 <input
-                                  class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors"
+                                  class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                   placeholder="Last Name"
                                   type="text"
                                 />
@@ -7874,7 +7878,7 @@
                                   >Address</label
                                 >
                                 <input
-                                  class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors"
+                                  class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                   placeholder="Address"
                                   type="text"
                                 />
@@ -7885,7 +7889,7 @@
                                   >Postcode</label
                                 >
                                 <input
-                                  class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors"
+                                  class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                   placeholder="Postcode"
                                   type="text"
                                 />
@@ -7896,7 +7900,7 @@
                                   >City</label
                                 >
                                 <input
-                                  class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors"
+                                  class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                   placeholder="City"
                                   type="text"
                                 />
@@ -7906,7 +7910,7 @@
                                 <div class="select-wrapper">
                                   <select
                                       id="countrySelect"
-                                      class="w-full px-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors"
+                                      class="w-full px-2 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                   >
                                       <option value="">Germany</option>
                                   </select>
@@ -7942,7 +7946,7 @@
                                   >Phone</label
                                 >
                                 <input
-                                  class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors"
+                                  class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                   placeholder="Phone"
                                   type="tel"
                                 />
@@ -7953,7 +7957,7 @@
                                   >Company</label
                                 >
                                 <input
-                                  class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors"
+                                  class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                   placeholder="Company"
                                   type="text"
                                 />
@@ -8021,7 +8025,7 @@
                                       >DHL Postal Number</label
                                     >
                                     <input
-                                      class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors"
+                                      class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                       placeholder="DHL Postal Number"
                                       type="text"
                                     />
@@ -8034,7 +8038,7 @@
                                       >DHL Pickup Location</label
                                     >
                                     <input
-                                      class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors"
+                                      class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                       placeholder="DHL Pickup Location"
                                       type="text"
                                     />
@@ -8047,7 +8051,7 @@
                                     >Salutation</label
                                   >
                                   <select
-                                    class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors"
+                                    class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                   >
                                     <option value="Mr">Mr</option>
                                     <option value="Mrs">Mrs</option>
@@ -8061,7 +8065,7 @@
                                     >First Name</label
                                   >
                                   <input
-                                    class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors"
+                                    class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                     placeholder="First Name"
                                     type="text"
                                   />
@@ -8072,7 +8076,7 @@
                                     >Last Name</label
                                   >
                                   <input
-                                    class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors"
+                                    class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                     placeholder="Last Name"
                                     type="text"
                                   />
@@ -8083,7 +8087,7 @@
                                     >Address</label
                                   >
                                   <input
-                                    class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors"
+                                    class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                     placeholder="Address"
                                     type="text"
                                   />
@@ -8094,7 +8098,7 @@
                                     >Postcode</label
                                   >
                                   <input
-                                    class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors"
+                                    class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                     placeholder="Postcode"
                                     type="text"
                                   />
@@ -8105,7 +8109,7 @@
                                     >City</label
                                   >
                                   <input
-                                    class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors"
+                                    class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                     placeholder="City"
                                     type="text"
                                   />
@@ -8116,7 +8120,7 @@
                                     >Country</label
                                   >
                                   <select
-                                    class="w-full px py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors"
+                                    class="w-full px py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                   >
                                     <option value="Belgium">Belgium</option>
                                     <option value="Canada">Canada</option>
@@ -8135,7 +8139,7 @@
                                     >Phone</label
                                   >
                                   <input
-                                    class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors"
+                                    class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                     placeholder="Phone"
                                     type="tel"
                                   />
@@ -8146,7 +8150,7 @@
                                     >Company</label
                                   >
                                   <input
-                                    class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors"
+                                    class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                     placeholder="Company"
                                     type="text"
                                   />
@@ -8183,7 +8187,7 @@
                                   storage location</label
                                 >
                                 <input
-                                  class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors"
+                                  class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                   placeholder="e.g. garage, terrace"
                                   type="text"
                                 />
@@ -8195,7 +8199,7 @@
                                   your choice</label
                                 >
                                 <input
-                                  class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors"
+                                  class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-200 focus:ring-2 focus:ring-inset transition-colors"
                                   placeholder="Name, street and house number"
                                   type="text"
                                 />
@@ -8204,8 +8208,8 @@
                           </div>
                           <div>
                             <button
-                              id="payButton"
-                              class="block w-full mx-auto bg-[#32cd32] hover:bg-[#FFA500] focus:bg-[#FFA500] text-white rounded-sm px-6 py-4 font-semibold"
+                              id="billing:email"
+                              class="validation-passed block w-full mx-auto bg-[#32cd32] hover:bg-[#FFA500] focus:bg-[#FFA500] text-white rounded-sm px-6 py-4 font-semibold"
                             >
                               Pay
                             </button>
