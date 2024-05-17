@@ -7364,7 +7364,7 @@
                     </div>
                   </div>
 
-                  <div class="w-full bg-white px-5 text-gray-800">
+                  <div class="w-full bg-white px-4 text-gray-800">
                     <div class="w-full">
                       <div class="my-6 mx-4">
                         <h1 class="font-semibold text-2xl sm:text-4xl ">
@@ -7378,10 +7378,18 @@
                           <div
                             class="container mx-auto text-gray-800 font-light mb-6"
                           >
+                          <div class="text-grey-200 space-y-2 mx-4 py-4">
+                            <div class="flex items-center space-x-1">
+                              <h1 class="text-lg font-semibold">Pay</h1>
+                              <img class="w-20" src="https://cdn.allsani.com/skin/frontend/ultimo/allsani/images/allsani-logo-grau.svg" alt="">
+                            </div>
+                            <p class="text-5xl font-semibold">$ 53.71</p>
+                          </div>
+                          
                             <div
-                              class="flex flex-col lg:flex-row items-center p-6 border rounded-lg border-gray-200"
+                              class="flex flex-row items-center"
                             >
-                              <div class="rounded-lg w-40 h-40 bg-gray-100 p-4">
+                              <div class="rounded-lg w-20 h-20 bg-gray-100 p-2">
                                 <img
                                   src="https://cdn.allsani.com/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/p/u/pulverdose_kunststoff_mittel_allsani_filatin_v02.png"
                                   alt="product"
@@ -7390,28 +7398,28 @@
                               </div>
 
                               <div
-                                class="flex flex-col md:flex-row items-center justify-between flex-grow md:pr-3 mt-4 md:mt-0"
+                                class="flex flex-row items-center justify-between flex-grow md:pr-3 mt-4 md:mt-0"
                               >
                                 <div class="flex flex-col px-4 items-center">
                                   <h6
-                                    class="font-semibold uppercase text-lg sm:text-2xl text-gray-600"
+                                    class="font-semibold uppercase text-sm text-gray-600"
                                   >
                                     Filatin
                                   </h6>
                                   <div class="relative">
                                     <button
                                       onclick="openModal()"
-                                      class="text-gray-400 focus:outline-none bg-white border border-gray-300 px-2 py-0.8 rounded inline-flex items-center"
+                                      class="text-gray-700 text-md focus:outline-none bg-gray-100 px-2 py-0.8 rounded inline-flex items-center"
                                     >
-                                      <span class="mr-1">Qty: </span
-                                      ><span id="quantity">1</span>
+                                      <p class="mr-1 text-md">Qty: </p
+                                      ><p id="quantity">1</p>
                                       <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
                                         viewBox="0 0 24 24"
                                         strokeWidth="1.5"
                                         stroke="currentColor"
-                                        class="w-4 h-4 ml-1"
+                                        class="w-2 h-2 ml-1"
                                       >
                                         <path
                                           strokeLinecap="round"
@@ -7426,11 +7434,11 @@
                                   </div>
                                 </div>
 
-                                <div class="mt-4">
-                                  <span
+                                <div class="">
+                                  <p
                                     id="price"
-                                    class="font-semibold text-gray-600 text-xl"
-                                    >€ 29.90</span
+                                    class="font-semibold text-gray-600 text-md"
+                                    >€ 29.90</p
                                   >
                                 </div>
                               </div>
@@ -7463,26 +7471,22 @@
                                   </button>
                               </div>
                           </div>
-                          
-                          
-
-                              <div class="p-8">
-                                <div class="flex items-center justify-around mb-4 w-1/2 mx-auto">
-                                  <button class="text-2xl w-10 h-10 text-slate-250 rounded-full bg-gray-100 transition-all duration-300 focus:border-sky-200 focus:ring-2 transition-colors" onclick="decrementQuantity()">-</button>
-                                  <input id="quantityInput" class="text-center w-20 h-10 border border-gray-200 rounded-md focus:outline-none" placeholder="Quantity" type="text" value="1" />
-                                  <button class="text-2xl w-10 h-10 text-slate-250 rounded-full bg-gray-100 transition-all duration-300 focus:border-sky-200 focus:ring-2 transition-colors" onclick="incrementQuantity()">+</button>
-                              </div>
-                              
-                                <button
-                                  onclick="updateQuantity(); closeModal();"
-                                  class="block w-full px-4 py-2 text-white rounded-md bg-[#32cd32] hover:bg-[#FFA500] focus:bg-[#FFA500]"
-                                >
-                                  Update
-                                </button>
-                              </div>
-                            </div>
+                          <div class="p-8">
+                            <div class="flex items-center justify-around mb-4 w-1/2 mx-auto">
+                              <button class="text-2xl w-10 h-10 text-slate-250 rounded-full bg-gray-100 transition-all duration-300 focus:border-sky-200 focus:ring-2 transition-colors" onclick="decrementQuantity()">-</button>
+                              <input id="quantityInput" class="text-center w-20 h-10 border border-gray-200 rounded-md focus:outline-none" placeholder="Quantity" type="text" value="1" />
+                              <button class="text-2xl w-10 h-10 text-slate-250 rounded-full bg-gray-100 transition-all duration-300 focus:border-sky-200 focus:ring-2 transition-colors" onclick="incrementQuantity()">+</button>
                           </div>
+                          <button
+                            onclick="updateQuantity(); closeModal();"
+                            class="block w-full px-4 py-2 text-white rounded-md bg-[#32cd32] hover:bg-[#FFA500] focus:bg-[#FFA500]"
+                          >
+                            Update
+                          </button>
                         </div>
+                      </div>
+                    </div>
+                  </div>
 
                           <div
                             class="w-full bg-white rounded-lg border border-gray-200 px-4 py-6 mb-6"
@@ -7591,9 +7595,9 @@
                           </div>
                         </div>
 
-                        <div class="px-3 md:w-6/12">
+                        <div class="px-3 md:w-6/12 shadow-md">
                           <div
-                            class="w-full mx-auto rounded-lg bg-white border border-gray-200 text-gray-800 font-light mb-6"
+                            class="w-full mx-auto rounded-lg bg-white text-gray-800 font-light mb-6"
                           >
                             <div class="w-full p-3 border-b border-gray-200">
                               <div>
